@@ -4,797 +4,221 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="myIcon.ico" />
-    <meta name="keywords"
-        content="Yining Jiao, Jiao Yining, CS, UNC, UNC-Chapel Hill, UCSD, SJTU, Shanghai Jiao Tong University" />
-    <meta name="description" content="Yining Jiao's Homepage" />
-    <meta name="google-site-verification" content="0eSNitBfkotnYTljBUNk8t6a6d5F-0iRAwWpEcOFKnU" />
-    <title>Yining Jiao</title>
-    <!-- fonts -->
+    <meta name="description" content="Chris Akcali — PhD-level scientific editing, 13 years of experience." />
+    <title>Chris Akcali | Scientific Editing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #ffffff;
-            --bg-sidebar: #f5f5f7;
-            --border: #cccccc;
-            --text: #333333;
-            --text-dim: #6b7280;
-            --text-bright: #1a1a1a;
-            --accent: #b8941e;
-            --accent-dim: #a6850e;
-            --link: #5b6abf;
-            --link-hover: #999999;
-            --card-hover: #f5f3ed;
-            --highlight: #8b1a2b;
+            --bg: #faf9f6; --bg-warm: #f4f1eb; --bg-card: #ffffff;
+            --border: #e0dcd4; --text: #3d3a36; --text-dim: #7a756d; --text-bright: #1c1a17;
+            --accent: #2c5f4a; --accent-glow: rgba(44,95,74,.08);
+            --gold: #b8941e; --gold-dim: rgba(184,148,30,.12);
         }
 
-        html,
+        html { scroll-behavior: smooth; }
+
         body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-            font-size: 15px;
-            line-height: 1.5;
-            min-height: 100vh;
+            background: var(--bg); color: var(--text);
+            font-family: 'Nunito Sans', sans-serif; font-size: 16px; line-height: 1.65;
             -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
         }
 
-        [id] {
-            scroll-margin-top: 56px;
-        }
+        [id] { scroll-margin-top: 68px; }
+        a { color: var(--accent); text-decoration: none; transition: color .2s; }
+        a:hover { color: #1a3d2f; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
 
-        a {
-            color: var(--link);
-            text-decoration: none;
-            transition: color .2s;
-        }
-
-        a:hover {
-            color: var(--link-hover);
-        }
-
-        /* ── Nav Bar ── */
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, .92);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        /* ── Nav ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250,249,246,.92); backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            padding: 0 60px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+            padding: 0 40px; display: flex; align-items: center; gap: 6px;
         }
+        .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1em; font-weight: 700; color: var(--accent); margin-right: auto; padding: 14px 0; }
+        .nav a.nl { font-size: .8em; color: var(--text-dim); padding: 16px 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; border-bottom: 2px solid transparent; transition: all .2s; }
+        .nav a.nl:hover { color: var(--text-bright); border-bottom-color: var(--accent); }
+        .nav .cta { margin-left: 10px; padding: 7px 20px; background: var(--accent); color: #fff; border-radius: 8px; font-size: .8em; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; transition: background .2s, transform .15s; }
+        .nav .cta:hover { background: #1a3d2f; color: #fff; transform: translateY(-1px); }
 
-        .nav-bar a {
-            font-size: 0.88em;
-            color: var(--text-dim);
-            padding: 14px 18px;
-            border-bottom: 2px solid transparent;
-            transition: color .2s, border-color .2s;
-            font-weight: 400;
-            letter-spacing: 0.03em;
+        /* ── Hero ── */
+        .hero {
+            padding: 150px 60px 80px; text-align: center;
+            background: radial-gradient(ellipse at 20% 50%, rgba(44,95,74,.04), transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(184,148,30,.04), transparent 50%), var(--bg);
         }
+        .hero-ey { font-size: .8em; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; animation: fu .7s ease forwards; }
+        .hero-ey::before, .hero-ey::after { content: ''; width: 36px; height: 1px; background: var(--accent); opacity: .4; }
+        .hero h1 { font-size: clamp(2.4em,5vw,3.8em); font-weight: 700; color: var(--text-bright); line-height: 1.1; letter-spacing: -.03em; margin-bottom: 20px; opacity: 0; animation: fu .7s ease .1s forwards; }
+        .hero h1 em { color: var(--accent); font-style: italic; }
+        .hero-sub { font-size: 1.1em; color: var(--text-dim); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; opacity: 0; animation: fu .7s ease .2s forwards; }
+        .hero-stats { display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; opacity: 0; animation: fu .7s ease .3s forwards; }
+        .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4em; font-weight: 700; color: var(--accent); line-height: 1; }
+        .stat-l { font-size: .75em; color: var(--text-dim); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; margin-top: 2px; }
+        @keyframes fu { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-        .nav-bar a:hover,
-        .nav-bar a.active {
-            color: var(--text-bright);
-            border-bottom-color: var(--accent);
+        /* ── Section ── */
+        .sec { padding: 64px 60px; max-width: 1000px; margin: 0 auto; }
+        .sec-alt { background: var(--bg-warm); padding: 64px 60px; }
+        .sec-alt .inner { max-width: 1000px; margin: 0 auto; }
+        .sec-t { font-size: 2em; font-weight: 700; color: var(--text-bright); text-align: center; margin-bottom: 10px; }
+        .sec-st { text-align: center; color: var(--text-dim); font-size: 1em; margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+        /* ── Services ── */
+        .srv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+        .srv {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+            padding: 28px 24px; transition: transform .25s, box-shadow .25s; position: relative; overflow: hidden;
         }
+        .srv::before { content:''; position: absolute; top:0; left:0; right:0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); opacity: 0; transition: opacity .25s; }
+        .srv:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.07); }
+        .srv:hover::before { opacity: 1; }
+        .srv-ic { width: 42px; height: 42px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--accent); }
+        .srv-ic i { width: 22px; height: 22px; }
+        .srv h3 { font-size: 1.2em; color: var(--text-bright); margin-bottom: 8px; font-weight: 600; }
+        .srv p { font-size: .88em; color: var(--text-dim); line-height: 1.6; }
 
-        /* ── Layout ── */
-        .page-wrapper {
-            display: block;
-            margin: 0;
-            padding: 96px 60px 0;
-            min-height: 100vh;
+        /* ── Why ── */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 28px; text-align: center; }
+        .why-ic { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: var(--accent); }
+        .why-ic i { width: 22px; height: 22px; }
+        .why-grid h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1em; color: var(--text-bright); margin-bottom: 6px; font-weight: 600; }
+        .why-grid p { font-size: .85em; color: var(--text-dim); line-height: 1.55; }
+
+        /* ── CTA ── */
+        .cta-sec {
+            text-align: center; padding: 64px 60px;
+            background: radial-gradient(ellipse at 50% 100%, rgba(44,95,74,.06), transparent 70%), var(--bg);
         }
-
-        /* ── Sidebar ── */
-        .sidebar {
-            width: 340px;
-            padding: 24px 28px;
-            float: left;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: #fafafa;
-            border-right: none;
-            border-radius: 16px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, .06);
+        .cta-sec h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2em; color: var(--text-bright); margin-bottom: 12px; }
+        .cta-sec p { color: var(--text-dim); margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 36px; background: var(--accent); color: #fff; border-radius: 10px;
+            font-size: 1em; font-weight: 700; transition: all .2s;
+            box-shadow: 0 4px 16px rgba(44,95,74,.25);
         }
+        .cta-btn:hover { background: #1a3d2f; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,95,74,.3); }
+        .cta-btn i { width: 18px; height: 18px; }
 
-        .sidebar img.profile {
-            width: 100%;
-            max-width: 220px;
-            height: auto;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--border);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
-            margin-bottom: 20px;
-            transition: transform .3s, box-shadow .3s;
-        }
+        /* ── Footer ── */
+        .footer { text-align: center; padding: 28px 40px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: .8em; }
 
-        .sidebar img.profile:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, .10);
-        }
-
-        .sidebar h1 {
-            font-size: 1.25em;
-            font-weight: 700;
-            color: var(--text-bright);
-            margin-bottom: 4px;
-            letter-spacing: -0.04em;
-            line-height: 1.2;
-        }
-
-        .sidebar .title-role {
-            font-size: 0.88em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .sidebar .affiliation {
-            font-size: 0.82em;
-            color: var(--text-dim);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        /* Link list */
-        .sidebar .link-list {
-            list-style: none;
-            padding: 0;
-            width: 100%;
-            text-align: left;
-        }
-
-        .sidebar .link-list li {
-            margin-bottom: 4px;
-        }
-
-        .sidebar .link-list a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border-radius: 10px;
-            font-size: 0.85em;
-            color: var(--text-dim);
-            transition: background .2s, color .2s;
-            font-weight: 400;
-        }
-
-        .sidebar .link-list a:hover {
-            background: var(--card-hover);
-            color: var(--text-bright);
-        }
-
-        .sidebar .link-list a i[data-lucide] {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-            color: var(--accent-dim);
-        }
-
-        /* ── Main Content ── */
-        .main-content {
-            margin-left: 400px;
-            padding: 0 0 40px;
-            max-width: 1300px;
-        }
-
-        .main-content h2 {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: var(--text-bright);
-            margin-top: 36px;
-            margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: none;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-            position: relative;
-            padding-left: 16px;
-        }
-
-        .main-content h2::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 4px;
-            bottom: 4px;
-            width: 3px;
-            background: var(--accent);
-            border-radius: 3px;
-        }
-
-        .main-content h2:first-child {
-            margin-top: 0;
-        }
-
-        /* About */
-        .about-text {
-            margin-bottom: 8px;
-            font-size: 0.98em;
-            line-height: 1.55;
-        }
-
-        .research-statement {
-            color: var(--text);
-            font-style: normal;
-            font-weight: 400;
-            margin-top: 10px;
-            font-size: 0.98em;
-            padding-left: 0;
-            line-height: 1.5;
-        }
-
-        /* ── Publications ── */
-        .pub-item {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 24px;
-            align-items: flex-start;
-            padding: 12px;
-            border-radius: 14px;
-            transition: background .2s, box-shadow .2s;
-        }
-
-        .pub-item:hover {
-            background: var(--card-hover);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
-        }
-
-        .pub-item img {
-            width: 360px;
-            min-width: 360px;
-            height: 180px;
-            object-fit: fill;
-            border-radius: 0;
-        }
-
-        .pub-info {
-            flex: 1;
-        }
-
-        .pub-title {
-            font-weight: 700;
-            color: var(--text-bright);
-            font-size: 1em;
-            margin-bottom: 5px;
-            line-height: 1.3;
-        }
-
-        .pub-authors {
-            font-size: 0.88em;
-            color: var(--text-dim);
-            margin-bottom: 5px;
-            line-height: 1.4;
-        }
-
-        .pub-authors .me {
-            color: var(--text-bright);
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        .pub-venue {
-            font-size: 0.88em;
-            color: var(--text-dim);
-            margin-bottom: 8px;
-            font-style: italic;
-            font-weight: 600;
-            color: var(--text-bright);
-            line-height: 1.4;
-        }
-
-        .pub-venue .highlight {
-            color: var(--highlight);
-            font-weight: 700;
-            background: rgba(139, 26, 43, 0.08);
-            padding: 2px 10px;
-            border-radius: 4px;
-            font-style: normal;
-            font-size: 0.95em;
-            letter-spacing: 0.02em;
-            box-shadow: 0 1px 4px rgba(139, 26, 43, 0.15);
-        }
-
-        .pub-links a {
-            font-size: 0.82em;
-            padding: 4px 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-right: 6px;
-            display: inline-block;
-            margin-bottom: 4px;
-            color: var(--text);
-            transition: all .2s;
-            font-weight: 500;
-        }
-
-        .pub-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #ffffff;
-        }
-
-        /* ── Lists ── */
-        .item-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .item-list li {
-            margin-bottom: 10px;
-            padding-left: 0;
-            font-size: 0.95em;
-            line-height: 1.45;
-        }
-
-        .item-list .item-title {
-            color: var(--text-bright);
-        }
-
-        .item-list .item-meta {
-            color: #888888;
-            font-size: 0.88em;
-            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-
-        .item-list .item-highlight {
-            color: var(--highlight);
-            font-weight: 600;
-        }
-
-        /* Experience */
-        .exp-item {
-            margin-bottom: 14px;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--border);
-            transition: border-color .2s, background .2s, box-shadow .2s;
-        }
-
-        .exp-item:hover {
-            border-left-color: var(--accent);
-            background: var(--card-hover);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .exp-place {
-            color: var(--text-bright);
-            font-weight: 700;
-            font-size: 0.95em;
-        }
-
-        .exp-date {
-            color: var(--text-dim);
-            font-size: 0.82em;
-        }
-
-        .exp-role {
-            color: var(--text);
-            font-size: 0.86em;
-        }
-
-        .exp-topic {
-            color: var(--text-dim);
-            font-size: 0.82em;
-        }
-
-        /* Services */
-        .services p {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .services strong {
-            color: var(--text-bright);
-        }
-
-        /* Misc */
-        .misc p {
-            font-size: 0.95em;
-            color: var(--text);
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 0.78em;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 900px) {
-            .nav-bar {
-                padding: 0 16px;
-                gap: 2px;
-                overflow-x: auto;
-                justify-content: flex-start;
-            }
-
-            .nav-bar a {
-                font-size: 0.72em;
-                padding: 8px 10px;
-                white-space: nowrap;
-            }
-
-            .page-wrapper {
-                padding: 80px 24px 0;
-            }
-
-            .sidebar {
-                float: none;
-                width: 100%;
-                padding: 0 0 32px;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .sidebar img.profile {
-                width: 160px;
-                height: 160px;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 32px 0;
-                max-width: 100%;
-            }
-
-            .pub-item {
-                flex-direction: column;
-                padding: 12px;
-            }
-
-            .pub-item img {
-                width: 100%;
-                min-width: 0;
-                height: auto;
-            }
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .nav { padding: 0 16px; } .nav-brand { font-size: .9em; }
+            .nav a.nl { font-size: .68em; padding: 12px 6px; }
+            .nav .cta { padding: 5px 12px; font-size: .68em; }
+            .hero { padding: 110px 24px 50px; } .hero h1 { font-size: 1.9em; }
+            .sec, .sec-alt, .cta-sec { padding: 48px 24px; }
+            .srv-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-87320911-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </head>
 
 <body>
 
-    <nav class="nav-bar">
-        <a href="#about">About</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#experience">Experiences</a>
-        <a href="#services">Services</a>
-        <a href="#misc">Miscellaneous</a>
+    <nav class="nav">
+        <div class="nav-brand">Chris Akcali</div>
+        <a href="#services" class="nl">Services</a>
+        <a href="#why" class="nl">Why Me</a>
+        <a href="#contact" class="cta">Contact</a>
     </nav>
 
-    <div class="page-wrapper">
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-ey">PhD-Level Scientific Editor</div>
+        <h1>Your research deserves<br><em>impeccable</em> writing.</h1>
+        <p class="hero-sub">Biology PhD from UNC-Chapel Hill. 13 years of professional editing. I help researchers communicate their science with clarity, precision, and impact.</p>
+        <div class="hero-stats">
+            <div><div class="stat-n">13+</div><div class="stat-l">Years Experience</div></div>
+            <div><div class="stat-n">500+</div><div class="stat-l">Papers Edited</div></div>
+            <div><div class="stat-n">PhD</div><div class="stat-l">Biology, UNC</div></div>
+        </div>
+    </section>
 
-        <!-- ========== LEFT SIDEBAR ========== -->
-        <aside class="sidebar">
-            <img class="profile" src="./pic/profile1.png" alt="Yining Jiao" />
-            <h1>Yining Jiao (Ina)</h1>
-            <div class="title-role">Postdoctoral Researcher</div>
-            <div class="affiliation">
-                Department of Computer Science and Engineering<br />
-                UC San Diego
-            </div>
-            <ul class="link-list">
-                <li><a href="https://scholar.google.com/citations?user=9FVJ-CkAAAAJ&hl=en" target="_blank"><i
-                            data-lucide="graduation-cap"></i> Google Scholar</a></li>
-                <li><a href="https://github.com/jiaoyining" target="_blank"><i data-lucide="github"></i> GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/yining-jiao-16545b1a8/" target="_blank"><i
-                            data-lucide="linkedin"></i> LinkedIn</a></li>
-                <li><a href="./jyn_resume_v7.pdf" target="_blank"><i data-lucide="file-text"></i> CV / Resume</a></li>
-                <li><a href="mailto:jyn@cs.unc.edu"><i data-lucide="mail"></i> jyn@cs.unc.edu</a></li>
-                <li><a href="mailto:y7jiao@health.ucsd.edu"><i data-lucide="mail"></i> y7jiao@health.ucsd.edu</a></li>
-            </ul>
-        </aside>
-
-        <!-- ========== RIGHT MAIN CONTENT ========== -->
-        <main class="main-content">
-
-            <h2 id="about">About Me</h2>
-            <p class="about-text">
-                I am a Postdoctoral Researcher at the Department of Computer Science and Engineering, UC San Diego.
-                I received my Ph.D. in Computer Science from the <a href="https://biag.cs.unc.edu/">Biomedical Image
-                    Analysis Group (BIAG)</a>,
-                <a href="https://www.unc.edu/">UNC-Chapel Hill</a> in 2025,
-                advised by <a href="https://cseweb.ucsd.edu/~mniethammer/author/marc-niethammer/">Prof. Marc
-                    Niethammer</a>.
-                Previously, I received my M.Sc. degree from
-                the <a href="http://en.bme.sjtu.edu.cn/">School of Biomedical Engineering</a>,
-                <a href="http://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> in 2020,
-                under the supervision of
-                <a href="https://qianwang.space/">Prof. Qian Wang</a>
-                in the <a href="http://mic.sjtu.edu.cn">Medical Imaging Computing (MIC) Lab</a>.
-                Before that, I received my B.Eng. degree from
-                <a href="https://honors.nwpu.edu.cn/">Honors College</a> at
-                <a href="https://www.nwpu.edu.cn/">Northwestern Polytechnical University</a> in 2017.
-            </p>
-
-            <h2 id="highlights">Research Highlights</h2>
-            <p class="research-statement">
-                <strong><em>I build AI that knows what it knows — and recognizes what it doesn't.</em></strong>
-                My research focuses on <strong>spatiotemporal representation learning</strong>,
-                with a dedication to <strong>interpretability</strong> and <strong>uncertainty quantification</strong>
-                within the healthcare domain. My research revolves around three questions:
-            </p>
-            <ul style="margin-top: 10px; padding-left: 20px; font-size: 0.95em; line-height: 1.45; list-style: none;">
-                <li><i data-lucide="eye"
-                        style="width:16px;height:16px;display:inline-block;vertical-align:-2px;margin-right:6px;color:var(--accent);"></i><strong>Learning
-                        to see shapes</strong> — advanced techniques for image and geometry processing.
-                </li>
-                <li><i data-lucide="users"
-                        style="width:16px;height:16px;display:inline-block;vertical-align:-2px;margin-right:6px;color:var(--accent);"></i><strong>Learning
-                        to model populations</strong> — representing how anatomical shapes vary and evolve.
-                </li>
-                <li><i data-lucide="scale"
-                        style="width:16px;height:16px;display:inline-block;vertical-align:-2px;margin-right:6px;color:var(--accent);"></i><strong>Learning
-                        to say "I don't know"</strong> — statistical machine learning for robust uncertainty
-                    quantification.</li>
-            </ul>
-
-            <!-- ── News ── -->
-            <h2 id="news">News</h2>
-            <ul class="item-list">
-                <li><span class="item-meta">[2026/02]</span> Our paper PRISM on uncertainty-aware shape modeling is now
-                    available as
-                    preprint.</li>
-                <li><span class="item-meta">[2026/02]</span> I joined UC San Diego as a Postdoctoral Researcher.</li>
-                <li><span class="item-meta">[2025/12]</span> I defended my PhD dissertation at UNC-Chapel Hill!</li>
-            </ul>
-
-            <!-- ── Publications ── -->
-            <h2 id="publications">Selected Publications</h2>
-
-            <div class="pub-item">
-                <img src="./indexpics/prism.png" alt="PRISM" />
-                <div class="pub-info">
-                    <div class="pub-title">PRISM: A 3D Probabilistic Neural Representation for Interpretable Shape
-                        Modeling</div>
-                    <div class="pub-authors"><span class="me">Yining Jiao</span>, Sreekalyani Bhamidi, Carlton
-                        Zdanski, Julia Kimbell, Andrew Prince, Cameron Worden, Samuel Kirse, Christopher Rutter,
-                        Benjamin Shields, Jisan Mahmud, Marc Niethammer</div>
-                    <div class="pub-venue">preprint</div>
-                    <div class="pub-links"><a href="#" target="_blank">paper</a></div>
+    <!-- Services -->
+    <section class="sec-alt" id="services">
+        <div class="inner">
+            <h2 class="sec-t">Services</h2>
+            <p class="sec-st">From first draft to final acceptance — I've got you covered.</p>
+            <div class="srv-grid">
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="file-pen"></i></div>
+                    <h3>Manuscript Editing</h3>
+                    <p>Substantive and copy editing for journal submissions. Language, structure, and journal-specific formatting — from draft to camera-ready.</p>
+                </div>
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="book-open"></i></div>
+                    <h3>Dissertations &amp; Theses</h3>
+                    <p>End-to-end editing for graduate work. I handle flow, consistency, and style so you can focus on your defense.</p>
+                </div>
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="landmark"></i></div>
+                    <h3>Grant Proposals</h3>
+                    <p>NIH, NSF, and beyond. Clear writing can mean the difference between funded and unfunded — I make every sentence count.</p>
+                </div>
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="globe"></i></div>
+                    <h3>ESL Author Support</h3>
+                    <p>Specialized editing for non-native speakers. I ensure your scientific voice sounds natural and authoritative in English.</p>
+                </div>
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="message-square-text"></i></div>
+                    <h3>Reviewer Responses</h3>
+                    <p>Thoughtful, diplomatic responses to peer review. Address every point clearly and maximize your acceptance chances.</p>
+                </div>
+                <div class="srv">
+                    <div class="srv-ic"><i data-lucide="presentation"></i></div>
+                    <h3>All Academic Writing</h3>
+                    <p>Abstracts, posters, cover letters, personal statements — any form of scientific and academic communication.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="pub-item">
-                <img src="./indexpics/LucidAtlas.png" alt="LucidAtlas" />
-                <div class="pub-info">
-                    <div class="pub-title">LucidAtlas: Learning Uncertainty-Aware, Covariate-Disentangled,
-                        Individualized Atlas Representations</div>
-                    <div class="pub-authors"><span class="me">Yining Jiao</span>, Sreekalyani Bhamidi, Carlton
-                        Zdanski, Huaizhi Qu, Julia Kimbell, Andrew Prince, Cameron Worden, Samuel Kirse, Christopher
-                        Rutter, Benjamin Shields, Jisan Mahmud, Tianlong Chen, Marc Niethammer</div>
-                    <div class="pub-venue">preprint</div>
-                    <div class="pub-links"><a href="https://openreview.net/forum?id=3FbNwC8ua8"
-                            target="_blank">paper</a></div>
-                </div>
+    <!-- Why -->
+    <section class="sec" id="why">
+        <h2 class="sec-t">Why Work With Me</h2>
+        <p class="sec-st">I'm not just an editor — I'm a fellow scientist.</p>
+        <div class="why-grid">
+            <div>
+                <div class="why-ic"><i data-lucide="microscope"></i></div>
+                <h4>Scientist First</h4>
+                <p>A PhD in Biology means I understand your experiments, your stats, and the logic of your arguments.</p>
             </div>
-
-            <div class="pub-item">
-                <img src="./indexpics/naisr.png" alt="NAISR" />
-                <div class="pub-info">
-                    <div class="pub-title">NAISR: A 3D Neural Additive Model for Interpretable Shape Representation
-                    </div>
-                    <div class="pub-authors"><span class="me">Yining Jiao</span>, Carlton Zdanski, Julia Kimbell, Andrew
-                        Prince, Cameron Worden, Samuel Kirse, Christopher Rutter, Benjamin Shields, William Dunn, Jisan
-                        Mahmud, Marc Niethammer</div>
-                    <div class="pub-venue">ICLR 2024. <span class="highlight">Spotlight, top 5%.</span></div>
-                    <div class="pub-links">
-                        <a href="https://uncbiag.github.io/NAISR/" target="_blank">project</a>
-                        <a href="https://www.youtube.com/watch?v=8wSIIPAvlLI" target="_blank">video</a>
-                        <a href="https://arxiv.org/abs/2303.09234" target="_blank">paper</a>
-                        <a href="https://github.com/uncbiag/NAISR" target="_blank">code</a>
-                    </div>
-                </div>
+            <div>
+                <div class="why-ic"><i data-lucide="sparkles"></i></div>
+                <h4>Beyond Grammar</h4>
+                <p>I focus on clarity, flow, and persuasiveness — the difference between a good paper and a great one.</p>
             </div>
-
-            <div class="pub-item">
-                <img src="./indexpics/curadiomics.png" alt="cuRadiomics" />
-                <div class="pub-info">
-                    <div class="pub-title">cuRadiomics: A GPU-Based Radiomics Feature Extraction Toolkit</div>
-                    <div class="pub-authors"><span class="me">Yining Jiao</span>, Oihane Mayo Ijurra, Lichi Zhang,
-                        Dinggang Shen, Qian Wang</div>
-                    <div class="pub-venue">MICCAI Workshop on Radiomics and Radiogenomics in Neuro-oncology using AI.
-                        <span class="highlight">Oral, top 10 of submissions.</span>
-                    </div>
-                    <div class="pub-links">
-                        <a href="https://link.springer.com/chapter/10.1007/978-3-030-40124-5_5"
-                            target="_blank">paper</a>
-                        <a href="https://github.com/jiaoyining/cuRadiomics" target="_blank">code</a>
-                    </div>
-                </div>
+            <div>
+                <div class="why-ic"><i data-lucide="shield-check"></i></div>
+                <h4>Confidential</h4>
+                <p>Your unpublished data stays safe. Strict confidentiality and reliable deadlines, every time.</p>
             </div>
-
-            <div class="pub-item">
-                <img src="./indexpics/isegformer.webp" alt="iSegFormer" />
-                <div class="pub-info">
-                    <div class="pub-title">iSegFormer: Interactive Segmentation via Transformers with Application to 3D
-                        Knee MR Images</div>
-                    <div class="pub-authors">Qin Liu, Zhenlin Xu, <span class="me">Yining Jiao</span>, Marc Niethammer
-                    </div>
-                    <div class="pub-venue">MICCAI 2022.</div>
-                    <div class="pub-links">
-                        <a href="https://arxiv.org/pdf/2112.11325.pdf" target="_blank">paper</a>
-                        <a href="https://github.com/uncbiag/iSegFormer" target="_blank">code</a>
-                    </div>
-                </div>
+            <div>
+                <div class="why-ic"><i data-lucide="timer"></i></div>
+                <h4>Fast Turnaround</h4>
+                <p>3–5 business days standard. Rush service available when deadlines are tight.</p>
             </div>
+        </div>
+    </section>
 
-            <div class="pub-item">
-                <img src="./indexpics/tgars.png" alt="TGARS" />
-                <div class="pub-info">
-                    <div class="pub-title">Intracluster Structured Low-Rank Matrix Analysis Method for Hyperspectral
-                        Denoising</div>
-                    <div class="pub-authors">Wei Wei, Lei Zhang, <span class="me">Yining Jiao</span>, Chunna Tian, Cong
-                        Wang, Yanning Zhang</div>
-                    <div class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing</div>
-                    <div class="pub-links">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/8447235" target="_blank">paper</a>
-                        <a href="https://github.com/jiaoyining/Intracluster-SLRMA" target="_blank">code</a>
-                    </div>
-                </div>
-            </div>
+    <!-- CTA -->
+    <section class="cta-sec" id="contact">
+        <h2>Ready to elevate your writing?</h2>
+        <p>Send your manuscript for a free assessment and quote. No obligation.</p>
+        <a href="mailto:chris@akcali.io" class="cta-btn"><i data-lucide="mail"></i> chris@akcali.io</a>
+    </section>
 
-            <!-- ── Awards ── -->
-            <h2 id="awards">Honors &amp; Awards</h2>
-            <ul class="item-list">
-                <li><span class="item-meta">[2021]</span> ICML Workshop on Computational Biology Fellowship.</li>
-                <li><span class="item-meta">[2020]</span> Outstanding Graduate of Shanghai (only 4 from department).
-                </li>
-                <li><span class="item-meta">[2019]</span> SJTU Excellent Graduate Student Award (only 2 from
-                    department).</li>
-                <li><span class="item-meta">[2017]</span> Excellent Undergraduate Thesis in NWPU.</li>
-            </ul>
-
-            <!-- ── Experience ── -->
-            <h2 id="experience">Research Experiences</h2>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-place">Department of Computer Science and Engineering, UC San Diego</span>
-                    <span class="exp-date">Feb 2026 – Present</span>
-                </div>
-                <div class="exp-role">Postdoctoral Researcher</div>
-                <div class="exp-topic">Topics: Individualized Spatiotemporal Learning, Uncertainty Quantification for
-                    Shapes.</div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-place">Biomedical Image Analysis Group (BIAG), UNC-Chapel Hill</span>
-                    <span class="exp-date">Jan 2021 – Dec 2025</span>
-                </div>
-                <div class="exp-role">Ph.D. Student, advised by Prof. Marc Niethammer</div>
-                <div class="exp-topic">Topics: Pediatric Airway Shape Analysis, Airway OCT Analysis, Interpretable and
-                    Uncertainty-Aware Spatiotemporal Learning for Healthcare.</div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-place">Medical Imaging Computing (MIC) Lab, Shanghai Jiao Tong University</span>
-                    <span class="exp-date">Sep 2017 – Mar 2020</span>
-                </div>
-                <div class="exp-role">M.Sc. Student, advised by Prof. Qian Wang</div>
-                <div class="exp-topic">Topics: GPU-Accelerated Radiomics, Data Science for Cancer Research.</div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-place">Shaanxi Provincial Key Lab of Speech &amp; Image Information
-                        Processing</span>
-                    <span class="exp-date">May 2016 – Jun 2017</span>
-                </div>
-                <div class="exp-role">Student Researcher</div>
-                <div class="exp-topic">Topics: Convex Optimization for Hyperspectral Image Denoising.</div>
-            </div>
-
-            <!-- ── Services ── -->
-            <h2 id="services">Academic Services</h2>
-            <div class="services">
-                <p><strong>Conference Reviews:</strong> CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AISTATS, AAAI, MICCAI.
-                </p>
-                <p><strong>Journal Reviews:</strong> IEEE TPAMI, IEEE JBHI, Neural Networks.</p>
-            </div>
-
-            <!-- ── Misc ── -->
-            <h2 id="misc">Fun Facts About Me</h2>
-            <div class="misc">
-                <p>Outside of research, I practice Tarot de Marseille and create knowledge-sharing content about tarot
-                    reading on <a href="https://space.bilibili.com/387281833" target="_blank">Bilibili</a>.
-                    My favorite tarot readers are
-                    <a href="https://en.wikipedia.org/wiki/Alejandro_Jodorowsky" target="_blank">Alejandro
-                        Jodorowsky</a>
-                    and <a href="https://cameliaelias.com/" target="_blank">Camelia Elias</a>. Feel free to reach out if
-                    you're interested!
-                </p>
-                <p>I enjoy gardening — especially growing roses.</p>
-                <p>I also write poems. I was invited to the Chinese Poetry New Discovery Poetry Camp in 2018 as one of
-                    twelve selected campers, and some of my works have been published in <em>Poetry Periodical</em>
-                    (《诗刊》), <em>Chinese Poetry</em> (《中国诗歌》), among others.
-                </p>
-            </div>
-
-            <!-- ── Footer ── -->
-            <div class="footer">
-                &copy; Yining Jiao | Last updated: Feb. 11, 2026
-            </div>
-
-        </main>
-    </div>
+    <footer class="footer">&copy; 2026 Chris Akcali. All rights reserved.</footer>
 
     <script>lucide.createIcons();</script>
-    <script>
-        // Highlight active nav link on scroll
-        (function () {
-            const navLinks = document.querySelectorAll('.nav-bar a');
-            const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-            function onScroll() {
-                let current = '';
-                for (const s of sections) {
-                    if (s.getBoundingClientRect().top <= 80) current = s.id;
-                }
-                navLinks.forEach(a => {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-                });
-            }
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
-        })();
-    </script>
 </body>
 
 </html>
